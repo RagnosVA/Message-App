@@ -1,6 +1,7 @@
 table {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
+    background-color: #e6e6e6;
 }
 tr td {
     padding: 10px;
@@ -15,8 +16,8 @@ thead tr th:first-child {
 thead tr th:last-child {
     border-top-right-radius: 10px;
 }
-tbody tr:nth-child(even) {
-    background-color: rgb(236, 236, 236);
+tbody tr {
+    background-color: #fff;
 }
 tbody tr:last-child td:first-child{
     border-bottom-left-radius: 10px;
