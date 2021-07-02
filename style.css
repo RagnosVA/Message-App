@@ -1,21 +1,26 @@
 :root {
     font-size: 16px;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
 table {
     max-width: 100%;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-family: sans-serif;
-    margin: 0px 10px 0px 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     background-color: #c9c9c9;
     font-weight: 550;
 }
 tr td {
-    padding: 10px;
+    padding: 7px;
 }
 thead tr th {
-    padding: 10px;
+    padding: 5px;
     background-color: rgb(255, 255, 203);
 }
 thead tr th:first-child {
@@ -34,7 +39,7 @@ tbody tr:last-child td:last-child{
     border-bottom-right-radius: 10px;
 }
 input[type=button]{
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
@@ -48,7 +53,7 @@ input[type=button]:active {
     background-color: #5cb5df;
 }
 .date {
-    margin: 20px 20px 0px 20px;
+    margin: 25px 20px 15px 20px;
     font-weight: 900;
     font-size: 0.9rem;
     font-family: Helvetica;
