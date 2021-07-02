@@ -1,14 +1,14 @@
 const pincode = "400708";
+
 async function display(){
     var mydate = new Date();
     var curr_data = mydate.getDate() + '-' + (mydate.getMonth()+1) + '-' + mydate.getFullYear();
     var api_link = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pincode + "&date=" + curr_data;
-    document.getElementById('today').innerHTML = curr_data;
+    document.getElementById("today").innerHTML = curr_data;
     fetch(api_link).then(
         res => {
             res.json().then(
                 data => {
-                    console.log(data.sessions);
                     if (data.sessions.length > 0) {
                         var temp = "";
                         data.sessions.forEach((itemData) => {
@@ -20,6 +20,8 @@ async function display(){
                             temp += "<td>" + itemData.address + "</td></tr>";
                         });
                         document.getElementById('myData1').innerHTML = temp;
+                    } else {
+                        document.getElementById('myData1').innerHTML = "<tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>";
                     }
                 }
             )
@@ -32,9 +34,8 @@ async function display(){
     fetch(api_link).then(
         res => {
             res.json().then(
-            data => {
-                console.log(data.sessions);
-                if (data.sessions.length > 0) {
+                data => {
+                    if (data.sessions.length > 0) {
                         var temp = "";
                         data.sessions.forEach((itemData) => {
                             temp += "<tr>";
@@ -45,6 +46,8 @@ async function display(){
                             temp += "<td>" + itemData.address + "</td></tr>";
                         });
                         document.getElementById('myData2').innerHTML = temp;
+                    } else {
+                        document.getElementById('myData2').innerHTML = "<tr><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
                     }
                 }
             )
