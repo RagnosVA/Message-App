@@ -38,16 +38,22 @@ input[type=button]{
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
-    background-color: rgb(121, 213, 255);
+    background-color: #79d5ff;
     color: #2e2e2e;;
     border: 0;
     font-weight: 700;
     font-size: 0.8rem;
-    font-family: sans-serif;
+}
+input[type=button]:active {
+    background-color: #5cb5df;
 }
 .date {
     margin: 20px 20px 0px 20px;
     font-weight: 900;
     font-size: 0.9rem;
     font-family: Helvetica;
+}
+.telegram {
+    margin: 20px;
+    max-width: 20px;
 }
