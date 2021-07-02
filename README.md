@@ -1,3 +1,3 @@
 # Message-App
-Displays available vaccination centers in an area.
+Displays available vaccination centers in an area.<br>
 Real-time data used.
