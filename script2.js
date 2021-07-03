@@ -1,5 +1,3 @@
-var n_schedule = require('node-schedule');
-
 async function send_message() {
     
     const pincode = "400708";
@@ -35,8 +33,3 @@ async function send_message() {
     api.send();
 
 }
-
-n_schedule.schedule.scheduleJob('* * * * *', () => {
-    console.log('running a task every minute');
-    send_message();
-});
