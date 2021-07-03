@@ -1,4 +1,6 @@
-var cron = require('node-cron');
+import schedule from 'node-schedule'
+
+schedule.scheduleJob('0 0 * * *', () => { ... })
 
 async function send_message() {
     
@@ -36,7 +38,7 @@ async function send_message() {
 
 }
 
-cron.schedule('* * * * *', () => {
+schedule.scheduleJob('* * * * *', () => {
     console.log('running a task every minute');
     send_message();
 });
