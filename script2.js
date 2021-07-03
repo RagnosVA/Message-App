@@ -1,3 +1,5 @@
+var cron = require('node-cron');
+
 async function send_message() {
     
     const pincode = "400708";
@@ -33,3 +35,8 @@ async function send_message() {
     api.send();
 
 }
+
+cron.schedule('* * * * *', () => {
+    console.log('running a task every minute');
+    send_message();
+});
