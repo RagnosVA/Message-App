@@ -1,4 +1,4 @@
-import schedule from 'node-schedule'
+var n_schedule = require('node-schedule');
 
 async function send_message() {
     
@@ -36,7 +36,7 @@ async function send_message() {
 
 }
 
-schedule.scheduleJob('* * * * *', () => {
+n_schedule.schedule.scheduleJob('* * * * *', () => {
     console.log('running a task every minute');
     send_message();
 });
