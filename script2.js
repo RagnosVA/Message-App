@@ -1,7 +1,5 @@
 import schedule from 'node-schedule'
 
-schedule.scheduleJob('0 0 * * *', () => { ... })
-
 async function send_message() {
     
     const pincode = "400708";
