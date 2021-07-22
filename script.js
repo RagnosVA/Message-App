@@ -1,9 +1,10 @@
 const pincode = "400708";
 
 async function display(){
+    document.getElementById('counter').value = Math.floor((Math.random()*100));
     var mydate = new Date();
-    var curr_data = mydate.getDate() + '-' + (mydate.getMonth()+1) + '-' + mydate.getFullYear();
-    var api_link = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pincode + "&date=" + curr_data;
+    var curr_data = `${mydate.getDate()}-'${(mydate.getMonth()+1)}-${mydate.getFullYear()}`;
+    var api_link = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${curr_data}`;
     document.getElementById("today").innerHTML = curr_data;
     fetch(api_link).then(
         res => {
@@ -21,16 +22,16 @@ async function display(){
                         });
                         document.getElementById('myData1').innerHTML = temp;
                     } else {
-                        document.getElementById('myData1').innerHTML = "<tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>";
+                        document.getElementById('myData1').innerHTML = "<tr align=\"center\"><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
                     }
                 }
             )
         }
     )
     mydate.setDate(mydate.getDate() + 1);
-    var curr_data = mydate.getDate() + '-' + (mydate.getMonth()+1) + '-' + mydate.getFullYear();
+    var curr_data = `${mydate.getDate()}-'${(mydate.getMonth()+1)}-${mydate.getFullYear()}`;
     document.getElementById('tomorrow').innerHTML = curr_data;
-    var api_link = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pincode + "&date=" + curr_data;
+    var api_link = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${curr_data}`;
     fetch(api_link).then(
         res => {
             res.json().then(
@@ -47,7 +48,7 @@ async function display(){
                         });
                         document.getElementById('myData2').innerHTML = temp;
                     } else {
-                        document.getElementById('myData2').innerHTML = "<tr><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+                        document.getElementById('myData2').innerHTML = "<tr align=\"center\"><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
                     }
                 }
             )
@@ -55,3 +56,4 @@ async function display(){
     )
 }
 display();
+setInterval(display, 3000);
