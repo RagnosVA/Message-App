@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vaccine</title>
-</head>
-<body>
-    <div>
-        <div class="date" id="today"></div><br>
-        <table id="myTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Vaccine</th>
-                    <th>Age</th>
-                    <th>Fee</th>
-                    <th>Address</th>
-                </tr>
-            </thead>
-            <tbody id="myData1"></tbody>
-        </table>
-        <br>
-        <div class="date" id="tomorrow"></div><br>
-        <table id="myTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Vaccine</th>
-                    <th>Age</th>
-                    <th>Fee</th>
-                    <th>Address</th>
-                </tr>
-            </thead>
-            <tbody id="myData2"></tbody>
-        </table>
-    </div>
-    <input type="button" name="button1" value="refresh" onClick="display();">
-    <input id="counter" type="button" name="button1" value="refresh">
+  </head>
+  <body>
+    <div class="date" id="day-after-tomorrow"></div>
+    <br />
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vaccine</th>
+          <th>Age</th>
+          <th>Fee</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="myData3"></tbody>
+    </table>
+    <div class="date" id="tomorrow"></div>
+    <br />
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vaccine</th>
+          <th>Age</th>
+          <th>Fee</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="myData2"></tbody>
+    </table>
+    <div class="date" id="today"></div>
+    <br />
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vaccine</th>
+          <th>Age</th>
+          <th>Fee</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="myData1"></tbody>
+    </table>
+    <br />
+    <input type="button" name="button1" value="refresh" onClick="display();" />
+    <input id="counter" type="button" name="button1" value="refresh" />
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

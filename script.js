@@ -54,6 +54,32 @@ async function display(){
             )
         }
     )
+    mydate.setDate(mydate.getDate() + 1);
+    var curr_data = `${mydate.getDate()}-${(mydate.getMonth()+1)}-${mydate.getFullYear()}`;
+    document.getElementById('day-after-tomorrow').innerHTML = curr_data;
+    var api_link = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${curr_data}`;
+    fetch(api_link).then(
+        res => {
+            res.json().then(
+                data => {
+                    if (data.sessions.length > 0) {
+                        var temp = "";
+                        data.sessions.forEach((itemData) => {
+                            temp += "<tr>";
+                            temp += "<td>" + itemData.name + "</td>";
+                            temp += "<td>" + itemData.vaccine + "</td>";
+                            temp += "<td>" + itemData.min_age_limit + "</td>";
+                            temp += "<td>" + itemData.fee_type + "</td>";
+                            temp += "<td>" + itemData.address + "</td></tr>";
+                        });
+                        document.getElementById('myData3').innerHTML = temp;
+                    } else {
+                        document.getElementById('myData3').innerHTML = "<tr align=\"center\"><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>";
+                    }
+                }
+            )
+        }
+    )
 }
 display();
-setInterval(display, 2500);
+setInterval(display, 3000);
